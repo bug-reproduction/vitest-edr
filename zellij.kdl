@@ -1,0 +1,18 @@
+layout {
+	pane {
+		pane name="shell" command="bash" {
+			args "-c" "${SHELL-bash}"
+		}
+		pane split_direction="vertical" {
+			pane name="compile" command="pnpm" {
+				args "compile:watch"
+			}
+			pane name="live test" command="pnpm" {
+				args "test"
+			}
+			pane name="local node" command="pnpm"  {
+				args "local_node"
+			}
+		}
+	}
+}
